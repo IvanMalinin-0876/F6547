@@ -1,6 +1,6 @@
 
 
-F6547 - Стек Sap-ui, JavaScript, Php, Kotlin, MySQL, Xslx, Git ,LAMP Ubuntu (еще в разработке, примерно через пару часов можно показать)
+F6547 - Стек Sap-ui, JavaScript, Php, Kotlin, MySQL, Xslx, Git ,LAMP Ubuntu 
 
  
 Код страниц и приложения на гит доступен по ссылке
