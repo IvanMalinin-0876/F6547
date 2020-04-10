@@ -1,0 +1,316 @@
+
+<head>
+    <link rel="stylesheet" href="./css/booklist.css">
+</head>
+<body>
+    <?php 
+    include( "./php/nb_header.php");
+    include( "./php/DB_connect.php");
+    include( "./php/rnd_value.php");
+    ?>
+    <div id="product">
+        <form action="./php/addproduct.php" method="POST">
+            <fieldset>
+                <legend>
+                     <h1>Новый продукт</h1>
+
+                </legend>
+                <table style="height: 169px;" width="583">
+                    <tbody>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Id Продукта:(HT-1000)</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="ProductId" 
+                                   <?php
+                                   echo 'value="'.
+                                        generateRandomId(5).'"';
+                                   ?>
+                                >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Категория(Laptops):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="Category"
+                                    <?php
+                                   echo 'value="'.
+                                        generateRandomString(8).'"';
+                                   ?>
+                                >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Главная категория("Computer Systems):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="MainCategory"
+                                <?php
+                                   echo 'value="'.
+                                        generateRandomString(8).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Налоги(1):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="TaxTarifCode"
+                                 <?php
+                                   echo 'value="'.
+                                        generateRandomVal(1).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Поставщик(Very Best Screens):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="SupplierName"
+                                <?php
+                                   echo 'value="'.
+                                        generateRandomString(8).'"';
+                                   ?>
+                                >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Мера веса (4.2):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="WeightMeasure"
+                                <?php
+                                   echo 'value="'.
+                                        generateRandomString(8).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Весовая единица (KG):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="WeightUnit"
+                                <?php
+                                   echo 'value="'.
+                                        generateRandomString(8).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Описание (Notebook Basic ... ):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="Description"
+                                <?php
+                                   echo 'value="'.
+                                        generateRandomString(8).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Наименование (Notebook Basic 15):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="Name"
+                                <?php
+                                   echo 'value="'.
+                                        generateRandomString(8).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Дата Старта Продажи (2017-03-26):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="DateOfSale"
+                                <?php
+                                   echo 'value="'.
+                                        generateRandomString(8).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Путь картинки (./sap/ui/.../img/HT-1000.jpg):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="ProductPicUrl"
+                                value="./upload_img/spa.png"
+                                >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Статус (Available):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="Status"
+                                 <?php
+                                   echo 'value="'.
+                                        generateRandomString(8).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Количество (10):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="Quantity"
+                                 <?php
+                                   echo 'value="'.
+                                        generateRandomVal(3).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>UoM (PC):
+                                </p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="UoM"
+                                 <?php
+                                   echo 'value="'.
+                                        generateRandomString(2).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Валюта (EUR):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="CurrencyCode"
+                                 <?php
+                                   echo 'value="'.
+                                        generateRandomString(3).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Цена (956)</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="Price"
+                                 <?php
+                                   echo 'value="'.
+                                        generateRandomVal(3).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Длинна (30):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="Width"
+                                <?php
+                                   echo 'value="'.
+                                        generateRandomVal(2).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Ширина (45):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="Depth"
+                                <?php
+                                   echo 'value="'.
+                                        generateRandomVal(2).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Высота (36):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="Height"
+                                <?php
+                                   echo 'value="'.
+                                        generateRandomVal(2).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>Ед.Изм (см):</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="DimUnit"
+                                <?php
+                                   echo 'value="'.
+                                        generateRandomString(2).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                   
+                             <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p>QR Код:</p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="text" name="qrcode"
+                                <?php
+                                   echo 'value="'.
+                                        generateRandomId(10).'"';
+                                   ?>
+                                   >
+                            </td>
+                        </tr>
+                   
+                   
+                   
+                    <tr>
+                            <td style="width: 247.5px;">&nbsp;
+                                <p> </p>
+                            </td>
+                            <td style="width: 283.5px; ">&nbsp;
+                                <input type="submit" value="Добавить Продукт">
+                            </td>
+                        </tr>
+                        
+                        
+               
+                
+                
+                
+                    </tbody>
+                </table>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
