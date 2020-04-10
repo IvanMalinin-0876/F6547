@@ -24,4 +24,9 @@ class DataStorage() {
     }
 
 
+    fun url_main():String{
+        var data:String = "http://213.226.112.96/prj/F6547/"
+        return data
+    }
+
 }

@@ -2,6 +2,7 @@ package com.f6547.f6547.ui.page2
 
 import android.annotation.SuppressLint
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.util.TypedValue
 import android.view.LayoutInflater
@@ -21,6 +22,7 @@ import com.f6547.f6547.R
 import kotlinx.android.synthetic.main.fragment_dashboard.*
 import org.json.JSONArray
 import org.json.JSONObject
+import java.net.URI
 
 class DashboardFragment : Fragment() {
 
@@ -66,48 +68,51 @@ class DashboardFragment : Fragment() {
      allert5436.visibility = View.INVISIBLE
 
     var t=json
-     val jsonArray: JSONArray = json!!.getJSONArray("item")
+     val jsonArray: JSONArray = json!!.getJSONArray("ProductCollection")
      for (i in 0 until jsonArray.length()) {
          var jsonInner: JSONObject = jsonArray.getJSONObject(i)
          var id = jsonInner.get("id")
-         var name = jsonInner.get("name")
-         var pages = jsonInner.get("pages")
-         var author = jsonInner.get("author")
-
          if (id.toString().compareTo("0")!= 0) {
-
-             val t_id: TextView = TextView(this.context)
-             val t_name: TextView = TextView(this.context)
-             val t_pages: TextView = TextView(this.context)
-             val t_author: TextView = TextView(this.context)
-             t_id.text = "Номер книги: " + id.toString()
-             t_name.text = "Название книги: " + name.toString()
-             t_pages.text = "Страниц: " + pages.toString()
-             t_author.text = "Автор: " + author.toString()
-
-             var colortext = "#FF0A0A0B"
-
-             t_id.setTextColor(Color.parseColor(colortext))
-             t_name.setTextColor(Color.parseColor(colortext))
-             t_pages.setTextColor(Color.parseColor(colortext))
-             t_author.setTextColor(Color.parseColor(colortext))
-
-             t_id.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 20F);
-             t_name.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16F);
-             t_pages.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16F);
-             t_author.setTextSize(TypedValue.COMPLEX_UNIT_DIP, 16F);
-
              val Lin: LinearLayout = LinearLayout(this.context)
              Lin.setOrientation(LinearLayout.VERTICAL);
              Lin.setBackgroundResource(R.drawable.shape0548)
-
              var param: RelativeLayout.LayoutParams =
-                 RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, 260);
+                 RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, 1040);
              param.setMargins(0, 40, 0, 0)
-             Lin.addView(t_id)
-             Lin.addView(t_name)
-             Lin.addView(t_pages)
-             Lin.addView(t_author)
+
+//             Lin.addView(newLabel(jsonInner, "id","id", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "QR Код: ","qrcode", "#FF0A0A0B",20F))
+             Lin.addView(newLabel(jsonInner, "Номер: ","ProductId", "#FF0A0A0B",10F))
+             Lin.addView(newStroke());
+             Lin.addView(newLabel(jsonInner, "Наименование: ","Name", "#FF0A0A0B",20F))
+
+
+             Lin.addView(newLabel(jsonInner, "Путь картинки: ","ProductPicUrl", "#FF0A0A0B",10F))
+             Lin.addView(newImage(jsonInner,"ProductPicUrl"))
+             Lin.addView(newLabel(jsonInner, "Описание: ","Description", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "Категория: ","Category", "#FF0A0A0B",10F))
+             Lin.addView(newStroke());
+             Lin.addView(newLabel(jsonInner, "Цена: ","Price", "#FF0A0A0B",10F))
+             Lin.addView(newStroke());
+             Lin.addView(newLabel(jsonInner, "Статус: ","Status", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "Количество: ","Quantity", "#FF0A0A0B",10F))
+             Lin.addView(newStroke());
+
+             Lin.addView(newLabel(jsonInner, "Длинна: ","Width", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "Ширина: ","Depth", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "Высота: ","Height", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "Ед.Изм: ","DimUnit", "#FF0A0A0B",10F))
+             Lin.addView(newStroke());
+             Lin.addView(newLabel(jsonInner, "Главная категория: ","MainCategory", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "НалогиТип: ","TaxTarifCode", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "Поставщик: ","SupplierName", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "Мера веса: ","WeightMeasure", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "Весовая единица: ","WeightUnit", "#FF0A0A0B",10F))
+             Lin.addView(newStroke());
+             Lin.addView(newLabel(jsonInner, "Дата Старта Продажи: ","DateOfSale", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "UoM: ","UoM", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "Валюта: ","CurrencyCode", "#FF0A0A0B",10F))
+
              Lin.layoutParams = param
              sc_card.addView(Lin)
          }
@@ -116,6 +121,31 @@ class DashboardFragment : Fragment() {
  }
 
 
+    fun newLabel(jsonInner: JSONObject, name:String,label:String, tcolor:String,tsize:Float): TextView{
+        var DataR = jsonInner.get(label)
+        val textData: TextView = TextView(this.context)
+        textData.text = name + DataR.toString()
+        var colortext = tcolor
+        textData.setTextColor(Color.parseColor(colortext))
+        textData.setTextSize(TypedValue.COMPLEX_UNIT_DIP, tsize);
+        return  textData
+    }
+
+    fun newImage(jsonInner: JSONObject, label:String): ImageView{
+        var DataR = jsonInner.get(label)
+        val imageData: ImageView = ImageView(this.context)
+
+        val imgUri: Uri = Uri.parse(  DataStorage().url_main() +"upload_img/"+ DataR )
+        imageData.setImageURI(imgUri);
+        return  imageData
+    }
+
+
+    fun newStroke(): TextView{
+        val textData: TextView = TextView(this.context)
+        textData.text = "  "
+        return  textData
+    }
     
     fun msgscreen(){
 

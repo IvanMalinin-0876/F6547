@@ -16,7 +16,7 @@ $sql = "SELECT * FROM `ProductCollection` ";
  $result = mysqli_query($dbcon, $sql);
 			
 	while ($row = mysqli_fetch_assoc($result)) {
-			
+$id   = htmlentities($row['id']);			
 $ProductId   = htmlentities($row['ProductId']);
 $Category  = htmlentities($row['Category']);
 $MainCategory = htmlentities($row['MainCategory']);
@@ -37,6 +37,8 @@ $Width = htmlentities($row['Width']);
 $Depth = htmlentities($row['Depth']);		
 $Height = htmlentities($row['Height']);		
 $DimUnit = htmlentities($row['DimUnit']);	
+$QrCode = htmlentities($row['qrcode']);
+
 
 $titletext = $titletext.' {
     "id": "'.$id.'",
@@ -50,7 +52,7 @@ $titletext = $titletext.' {
     "Description" : "'.$Description.'",
     "Name" : "'.$Name.'",
     "DateOfSale" : "'.$DateOfSale.'",
-    "ProductPicUrl" : "'.$ProductPicUrl.'",
+    "ProductPicUrl" : "'.$ProductPicUrle.'",
     "Status" : "'.$Status.'",
     "Quantity" : "'.$Quantity.'",
     "UoM" : "'.$UoM.'",
@@ -60,7 +62,7 @@ $titletext = $titletext.' {
     "Depth" : "'.$Depth.'",
     "Height" : "'.$Height.'",
     "DimUnit" : "'.$DimUnit.'",
-    "qrcode": "'.$qrcode.'"
+    "qrcode": "'.$QrCode.'"
 },';
 			
 			}
