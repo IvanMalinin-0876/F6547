@@ -3,7 +3,8 @@ sap.ui.define(['jquery.sap.global', 'sap/m/TablePersoController', 'sap/m/Message
     var TableController = Controller.extend("sap.m.sample.TableExport.Table", {
         onInit: function () {
             // set explored app's demo model on this sample
-            var oModel = new JSONModel(jQuery.sap.getModulePath("sap.ui.demo.mock", "/products.json"));
+            var oModel = new JSONModel(jQuery.sap.getModulePath("sap.ui.demo.mock", "/store_card.json"));
+            //  new JSONModel(jQuery.sap.getModulePath("sap.ui.demo.mock", "/products.json"));
             this.getView().setModel(oModel);
         },
         onExcelDataExport: sap.m.Table.prototype.exportData || function (oEvent) {

@@ -25,7 +25,7 @@
                                 <input type="text" name="ProductId" 
                                    <?php
                                    echo 'value="'.
-                                        generateRandomId(5).'"';
+                                        generateRandomId(2).'-'.generateRandomId(5).'"';
                                    ?>
                                 >
                             </td>
@@ -37,8 +37,8 @@
                             <td style="width: 283.5px; ">&nbsp;
                                 <input type="text" name="Category"
                                     <?php
-                                   echo 'value="'.
-                                        generateRandomString(8).'"';
+                                   echo 'value="'.'Ноутбук'.'"';
+                                        //generateRandomString(8)
                                    ?>
                                 >
                             </td>
@@ -50,8 +50,8 @@
                             <td style="width: 283.5px; ">&nbsp;
                                 <input type="text" name="MainCategory"
                                 <?php
-                                   echo 'value="'.
-                                        generateRandomString(8).'"';
+                                   echo 'value="'.'Компьютеры'.'"';
+                                       // generateRandomString(8).'"';
                                    ?>
                                    >
                             </td>
@@ -76,8 +76,8 @@
                             <td style="width: 283.5px; ">&nbsp;
                                 <input type="text" name="SupplierName"
                                 <?php
-                                   echo 'value="'.
-                                        generateRandomString(8).'"';
+                                   echo 'value="'.'IBM'.'"'
+                                        //generateRandomString(8).'"';
                                    ?>
                                 >
                             </td>
@@ -90,7 +90,7 @@
                                 <input type="text" name="WeightMeasure"
                                 <?php
                                    echo 'value="'.
-                                        generateRandomString(8).'"';
+                                        generateRandomval(1).'"';
                                    ?>
                                    >
                             </td>
@@ -102,8 +102,8 @@
                             <td style="width: 283.5px; ">&nbsp;
                                 <input type="text" name="WeightUnit"
                                 <?php
-                                   echo 'value="'.
-                                        generateRandomString(8).'"';
+                                   echo 'value="'.'Кг'.'"';
+                                       // generateRandomString(8).'"';
                                    ?>
                                    >
                             </td>
@@ -115,8 +115,8 @@
                             <td style="width: 283.5px; ">&nbsp;
                                 <input type="text" name="Description"
                                 <?php
-                                   echo 'value="'.
-                                        generateRandomString(8).'"';
+                                   echo 'value=" Ноутбук модели '.
+                                        generateRandomString(2).'-'.generateRandomString(4).'"';
                                    ?>
                                    >
                             </td>
@@ -128,8 +128,8 @@
                             <td style="width: 283.5px; ">&nbsp;
                                 <input type="text" name="Name"
                                 <?php
-                                   echo 'value="'.
-                                        generateRandomString(8).'"';
+                                   echo 'value="IBM-'.
+                                        generateRandomVal(4).'"';
                                    ?>
                                    >
                             </td>
@@ -141,8 +141,10 @@
                             <td style="width: 283.5px; ">&nbsp;
                                 <input type="text" name="DateOfSale"
                                 <?php
-                                   echo 'value="'.
-                                        generateRandomString(8).'"';
+                                
+                                $date=date_create("2013-03-15");
+
+                                   echo 'value="'.date_format($date,"Y/m/d").'"';
                                    ?>
                                    >
                             </td>
@@ -164,8 +166,8 @@
                             <td style="width: 283.5px; ">&nbsp;
                                 <input type="text" name="Status"
                                  <?php
-                                   echo 'value="'.
-                                        generateRandomString(8).'"';
+                                   echo 'value="'.'В наличии'.'"';
+                                        //generateRandomString(8).'"';
                                    ?>
                                    >
                             </td>
@@ -204,8 +206,8 @@
                             <td style="width: 283.5px; ">&nbsp;
                                 <input type="text" name="CurrencyCode"
                                  <?php
-                                   echo 'value="'.
-                                        generateRandomString(3).'"';
+                                   echo 'value="'.'EUR'.'"';
+                                      //  generateRandomString(3).'"';
                                    ?>
                                    >
                             </td>
@@ -269,8 +271,8 @@
                             <td style="width: 283.5px; ">&nbsp;
                                 <input type="text" name="DimUnit"
                                 <?php
-                                   echo 'value="'.
-                                        generateRandomString(2).'"';
+                                   echo 'value="'.'см'.'"';
+                                       // generateRandomString(2).'"';
                                    ?>
                                    >
                             </td>

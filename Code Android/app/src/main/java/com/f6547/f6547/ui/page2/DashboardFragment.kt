@@ -93,6 +93,7 @@ class DashboardFragment : Fragment() {
              Lin.addView(newLabel(jsonInner, "Категория: ","Category", "#FF0A0A0B",10F))
              Lin.addView(newStroke());
              Lin.addView(newLabel(jsonInner, "Цена: ","Price", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "Валюта: ","CurrencyCode", "#FF0A0A0B",10F))
              Lin.addView(newStroke());
              Lin.addView(newLabel(jsonInner, "Статус: ","Status", "#FF0A0A0B",10F))
              Lin.addView(newLabel(jsonInner, "Количество: ","Quantity", "#FF0A0A0B",10F))
@@ -102,16 +103,17 @@ class DashboardFragment : Fragment() {
              Lin.addView(newLabel(jsonInner, "Ширина: ","Depth", "#FF0A0A0B",10F))
              Lin.addView(newLabel(jsonInner, "Высота: ","Height", "#FF0A0A0B",10F))
              Lin.addView(newLabel(jsonInner, "Ед.Изм: ","DimUnit", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "Мера веса: ","WeightMeasure", "#FF0A0A0B",10F))
+             Lin.addView(newLabel(jsonInner, "Весовая единица: ","WeightUnit", "#FF0A0A0B",10F))
              Lin.addView(newStroke());
              Lin.addView(newLabel(jsonInner, "Главная категория: ","MainCategory", "#FF0A0A0B",10F))
              Lin.addView(newLabel(jsonInner, "НалогиТип: ","TaxTarifCode", "#FF0A0A0B",10F))
              Lin.addView(newLabel(jsonInner, "Поставщик: ","SupplierName", "#FF0A0A0B",10F))
-             Lin.addView(newLabel(jsonInner, "Мера веса: ","WeightMeasure", "#FF0A0A0B",10F))
-             Lin.addView(newLabel(jsonInner, "Весовая единица: ","WeightUnit", "#FF0A0A0B",10F))
+
              Lin.addView(newStroke());
              Lin.addView(newLabel(jsonInner, "Дата Старта Продажи: ","DateOfSale", "#FF0A0A0B",10F))
              Lin.addView(newLabel(jsonInner, "UoM: ","UoM", "#FF0A0A0B",10F))
-             Lin.addView(newLabel(jsonInner, "Валюта: ","CurrencyCode", "#FF0A0A0B",10F))
+
 
              Lin.layoutParams = param
              sc_card.addView(Lin)

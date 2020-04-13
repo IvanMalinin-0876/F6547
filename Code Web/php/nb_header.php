@@ -24,7 +24,7 @@ session_start();
    <a href="order.html" class="w3-bar-item w3-button ">Описание</a>
     <a href="index.html" class="w3-bar-item w3-button ">Sap-ui</a>
     <a href="additem.html" class="w3-bar-item w3-button ">Добавить продукт</a>
-
+   <a href="./php/savejson.php" class="w3-bar-item w3-button ">Обновить</a>
     <?php
 
 //$_SESSION['username'] ='test';

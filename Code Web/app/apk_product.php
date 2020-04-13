@@ -65,41 +65,9 @@ $titletext = $titletext.' {
     "qrcode": "'.$QrCode.'"
 },';
 			
-			}
-			
-$titletext = $titletext.'
-{
-
-  "id": "0",
-    "ProductId": "none",
-    "Category" : "none",
-    "MainCategory": "none",
-    "TaxTarifCode" : "none",
-    "SupplierName" : "none",
-    "WeightMeasure" : "none",
-    "WeightUnit" : "none",
-    "Description" : "none",
-    "Name" : "none",
-    "DateOfSale" : "none",
-    "ProductPicUrl" : "none",
-    "Status" : "none",
-    "Quantity" : "none",
-    "UoM" : "none",
-    "CurrencyCode" : "none",
-    "Price" : "none",
-    "Width" : "none",
-    "Depth" : "none",
-    "Height" : "none",
-    "DimUnit" : "none",
-    "qrcode": "none"
-}
-
-
-]}';	
-
-
-
-
+			};
+$titletext = 	substr_replace($titletext ,"",-1);
+$titletext = $titletext.']}';	
 $myArray = json_decode($titletext);
 header('Content-Type: application/json');
 echo json_encode($myArray);
